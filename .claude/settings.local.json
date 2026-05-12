@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm view *)",
+      "Bash(npm run *)",
+      "PowerShell(Move-Item *)",
+      "Bash(cmd *)",
+      "Bash(npx --yes next build)",
+      "Bash(npx next *)"
+    ]
+  }
+}
