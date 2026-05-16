@@ -5,7 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import LangProvider from "@/components/LangProvider";
-import BackToTop from "@/components/BackToTop";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Servicios Rojas, S.A.",
   },
   description:
-    "Servicios Rojas, S.A. — Soluciones llave en mano en ingeniería civil, telecomunicaciones y remodelaciones & construcción comercial en Panamá desde 1997. Calle E, Casa L 17, Bethania. Tel. +507 229-8840.",
+    "Servicios Rojas, S.A. — Soluciones llave en mano en ingeniería civil, telecomunicaciones, data centers y remodelaciones & construcción comercial en Panamá desde 1997. Calle E, Casa L 17, Bethania. Tel. +507 229-8840 · WhatsApp +507 6688-8362.",
   applicationName: "Servicios Rojas",
   authors: [{ name: "Servicios Rojas, S.A." }],
   generator: "Next.js",
@@ -115,8 +115,7 @@ const ORGANIZATION_JSON_LD = {
   description:
     "Soluciones integradas en ingeniería civil, telecomunicaciones y remodelaciones & construcción comercial en Panamá desde 1997.",
   foundingDate: "1997",
-  telephone: "+507-229-8840",
-  faxNumber: "+507-229-6415",
+  telephone: ["+507-229-8840", "+507-6688-8362"],
   email: "proyectos@servicios-rojas.com",
   priceRange: "$$$",
   address: {
@@ -133,6 +132,12 @@ const ORGANIZATION_JSON_LD = {
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       opens: "08:00",
       closes: "17:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Saturday"],
+      opens: "08:00",
+      closes: "12:00",
     },
   ],
   sameAs: [] as string[],
@@ -181,7 +186,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navbar />
           <main id="main">{children}</main>
           <Footer />
-          <BackToTop />
+          <WhatsAppFloat />
         </LangProvider>
 
         {GTM_ID && (

@@ -28,6 +28,14 @@ export default function Footer() {
             <div className="socials">
               <a href="mailto:proyectos@servicios-rojas.com" aria-label="Email">@</a>
               <a href="tel:+5072298840" aria-label="Teléfono">☎</a>
+              <a
+                href="https://wa.me/50766888362"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
+                💬
+              </a>
             </div>
           </div>
           <div className="foot-col">
@@ -70,10 +78,11 @@ export default function Footer() {
             <ul>
               <li>📍 Calle E, Casa L 17, Bethania, Panamá</li>
               <li>☎ +507 229-8840</li>
+              <li>💬 +507 6688-8362 (WhatsApp)</li>
               <li>✉ proyectos@servicios-rojas.com</li>
               <li>
-                <span data-es>Lun – Vie 8:00 – 17:00</span>
-                <span data-en>Mon – Fri 8:00 – 17:00</span>
+                <span data-es>Lun – Vie 8:00 – 17:00 · Sáb 8:00 – 12:00</span>
+                <span data-en>Mon – Fri 8:00 – 17:00 · Sat 8:00 – 12:00</span>
               </li>
             </ul>
           </div>

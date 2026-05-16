@@ -6,7 +6,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Contacto",
   description:
-    "Contacta a Servicios Rojas, S.A. Tel. +507 229-8840 · proyectos@servicios-rojas.com · Calle E, Casa L 17, Bethania, Panamá. Cotización en 24 h.",
+    "Contacta a Servicios Rojas, S.A. Tel. +507 229-8840 · WhatsApp +507 6688-8362 · proyectos@servicios-rojas.com · Calle E, Casa L 17, Bethania, Panamá. Cotización en 24 h para proyectos de ingeniería civil, telecomunicaciones y data centers.",
   alternates: { canonical: "/contacto" },
   openGraph: {
     title: "Contacto — Servicios Rojas, S.A.",
@@ -72,11 +72,17 @@ export default function ContactoPage() {
               <div className="contact-item">
                 <div className="icon">☎</div>
                 <div>
-                  <h5 data-es>Teléfono / Fax</h5>
-                  <h5 data-en>Phone / Fax</h5>
+                  <h5 data-es>Teléfono</h5>
+                  <h5 data-en>Phone</h5>
                   <a href="tel:+5072298840">+507 229-8840</a>
-                  <br />
-                  <span style={{ color: "var(--slate-500)" }}>Fax: +507 229-6415</span>
+                </div>
+              </div>
+              <div className="contact-item">
+                <div className="icon">💬</div>
+                <div>
+                  <h5 data-es>Celular / WhatsApp</h5>
+                  <h5 data-en>Mobile / WhatsApp</h5>
+                  <a href="tel:+50766888362">+507 6688-8362</a>
                 </div>
               </div>
               <div className="contact-item">
@@ -85,36 +91,6 @@ export default function ContactoPage() {
                   <h5 data-es>Correo</h5>
                   <h5 data-en>Email</h5>
                   <a href="mailto:proyectos@servicios-rojas.com">proyectos@servicios-rojas.com</a>
-                  <br />
-                  <a href="mailto:comunicaciones@servicios-rojas.com">comunicaciones@servicios-rojas.com</a>
-                </div>
-              </div>
-              <div className="contact-item">
-                <div className="icon">👥</div>
-                <div>
-                  <h5 data-es>Contactos directos</h5>
-                  <h5 data-en>Direct contacts</h5>
-                  <p style={{ fontSize: 14, lineHeight: 1.7 }}>
-                    <strong>Ing. Arturo I. Rojas Vivero</strong><br />
-                    <span data-es>Gerente General</span>
-                    <span data-en>General Manager</span>
-                    <br />
-                    <a href="mailto:arojas@servicios-rojas.com">arojas@servicios-rojas.com</a>
-                  </p>
-                  <p style={{ fontSize: 14, lineHeight: 1.7, marginTop: 10 }}>
-                    <strong>Ing. Arturo I. Rojas Lozano</strong><br />
-                    <span data-es>Gerente Proyectos Obra Civil</span>
-                    <span data-en>Civil Works Manager</span>
-                    <br />
-                    <a href="mailto:arojaslozano@servicios-rojas.com">arojaslozano@servicios-rojas.com</a>
-                  </p>
-                  <p style={{ fontSize: 14, lineHeight: 1.7, marginTop: 10 }}>
-                    <strong>Ing. Carlos Lozano Yaber</strong><br />
-                    <span data-es>Gerente Telecom</span>
-                    <span data-en>Telecom Manager</span>
-                    <br />
-                    <a href="mailto:clozanoy@servicios-rojas.com">clozanoy@servicios-rojas.com</a>
-                  </p>
                 </div>
               </div>
               <div className="contact-item">
@@ -124,8 +100,22 @@ export default function ContactoPage() {
                   <h5 data-en>Hours</h5>
                   <p data-es>Lun – Vie · 8:00 – 17:00</p>
                   <p data-en>Mon – Fri · 8:00 – 17:00</p>
+                  <p data-es>Sáb · 8:00 – 12:00</p>
+                  <p data-en>Sat · 8:00 – 12:00</p>
                 </div>
               </div>
+
+              <a
+                href="https://wa.me/50766888362?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto%20con%20Servicios%20Rojas."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="whatsapp-btn"
+                aria-label="Escríbenos por WhatsApp"
+              >
+                <span aria-hidden>💬</span>
+                <span data-es>Escríbenos por WhatsApp</span>
+                <span data-en>Message us on WhatsApp</span>
+              </a>
             </div>
 
             <ContactForm />
@@ -135,12 +125,14 @@ export default function ContactoPage() {
 
       <section style={{ padding: 0 }}>
         <iframe
-          title="Servicios Rojas — Bethania, Panamá"
-          src="https://www.google.com/maps?q=Bethania,+Panamá&output=embed"
+          title="Servicios Rojas, S.A. — Bethania, Panamá"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.563297084225!2d-79.52591312427592!3d9.012268789249159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca95838918aa5%3A0x81b3c417a117f48a!2sServicios%20Rojas%2C%20S.A.!5e0!3m2!1ses!2spa!4v1778948011409!5m2!1ses!2spa"
           width="100%"
           height={450}
           style={{ border: 0, display: "block" }}
           loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          allowFullScreen
         />
       </section>
     </>

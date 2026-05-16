@@ -7,7 +7,8 @@
       "PowerShell(Move-Item *)",
       "Bash(cmd *)",
       "Bash(npx --yes next build)",
-      "Bash(npx next *)"
+      "Bash(npx next *)",
+      "Bash(npx tsc *)"
     ]
   }
 }

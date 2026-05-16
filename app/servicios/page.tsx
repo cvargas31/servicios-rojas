@@ -31,54 +31,9 @@ type Svc = {
 
 const SERVICES: Svc[] = [
   {
-    id: "telecom",
-    num: "01",
-    eyebrow: { es: "01 — Telecomunicaciones", en: "01 — Telecommunications" },
-    heading: { es: "Infraestructura Telecom", en: "Telecom Infrastructure" },
-    intro: {
-      es: "Soluciones para operadores de telecomunicaciones y empresas corporativas: planta externa de fibra y cobre, construcción de sitios para telefonía móvil, sistemas de conectividad estructurada e integración de redes de video, voz, datos y control.",
-      en: "Solutions for telecom operators and corporate clients: outside plant for fiber and copper, mobile site construction, structured connectivity systems and integration of video, voice, data and control networks.",
-    },
-    items: [
-      { es: "Proyectos llave en mano para BTS", en: "Turnkey BTS projects" },
-      { es: "Mantenimiento preventivo y correctivo", en: "Preventive & corrective maintenance" },
-      { es: "Instalación de equipos de telefonía móvil", en: "Mobile telephony equipment install" },
-      { es: "Sistemas radiantes GSM, UMTS, 3G y LTE", en: "GSM, UMTS, 3G & LTE radiating systems" },
-      { es: "Site surveys", en: "Site surveys" },
-      { es: "Torres autosoportadas y monopolos", en: "Self-supporting towers & monopoles" },
-      { es: "Adecuaciones civiles, eléctricas y herrajes", en: "Civil, electrical & hardware retrofits" },
-      { es: "Pararrayos y protección eléctrica", en: "Lightning rods & electrical protection" },
-    ],
-    img: "/images/76-sitios-tigo/42.jpg",
-    imgLabel: { es: "TELECOM", en: "TELECOM" },
-  },
-  {
-    id: "civil",
-    num: "02",
-    eyebrow: { es: "02 — Ingeniería civil", en: "02 — Civil engineering" },
-    heading: { es: "Construcción Civil e Industrial", en: "Civil & Industrial Construction" },
-    intro: {
-      es: "Desde fundaciones críticas hasta naves industriales completas. Manejamos obras estructurales, pavimentaciones portuarias, edificios comerciales, plantas industriales y adecuaciones para clientes gubernamentales y privados.",
-      en: "From critical foundations to complete industrial buildings. Structural works, port paving, commercial buildings, industrial plants and retrofits for government and private clients.",
-    },
-    items: [
-      { es: "Estructuras metálicas", en: "Steel structures" },
-      { es: "Fundaciones reforzadas", en: "Reinforced foundations" },
-      { es: "Naves y plantas industriales", en: "Warehouses & industrial plants" },
-      { es: "Pavimentación portuaria e industrial", en: "Port & industrial paving" },
-      { es: "Edificios comerciales y residenciales", en: "Commercial & residential buildings" },
-      { es: "Cuartos fríos y de maquinaria", en: "Cold rooms & machine rooms" },
-      { es: "Casas de fuerza y subestaciones", en: "Power houses & substations" },
-      { es: "Pesas camioneras y bases para silos", en: "Truck scales & silo bases" },
-    ],
-    img: "/images/estructura-metalica/9.jpg",
-    imgLabel: { es: "CIVIL", en: "CIVIL" },
-    reverse: true,
-  },
-  {
     id: "data",
-    num: "03",
-    eyebrow: { es: "03 — Data centers", en: "03 — Data centers" },
+    num: "01",
+    eyebrow: { es: "01 — Data centers", en: "01 — Data centers" },
     heading: { es: "Data Centers y Salas Técnicas", en: "Data Centers & Server Rooms" },
     intro: {
       es: "Construcción de data centers y salas técnicas: instalación de facilidades eléctricas, suministro e instalación de piso elevado para cores y datacenters, y soluciones modulares como Fusion Module 2000 instaladas para Claro Panamá.",
@@ -94,8 +49,53 @@ const SERVICES: Svc[] = [
       { es: "Centros de monitoreo", en: "Monitoring centers" },
       { es: "Impermeabilización de muros y techos", en: "Wall & roof waterproofing" },
     ],
-    img: "/images/datacenter-fusion/61.jpg",
+    img: "https://images.unsplash.com/photo-1591808216268-ce0b82787efe?q=80&w=1600&auto=format&fit=crop",
     imgLabel: { es: "DATA CENTER", en: "DATA CENTER" },
+  },
+  {
+    id: "telecom",
+    num: "02",
+    eyebrow: { es: "02 — Telecomunicaciones", en: "02 — Telecommunications" },
+    heading: { es: "Infraestructura Telecom", en: "Telecom Infrastructure" },
+    intro: {
+      es: "Soluciones para operadores de telecomunicaciones y empresas corporativas: planta externa de fibra y cobre, construcción de sitios para telefonía móvil, sistemas de conectividad estructurada e integración de redes de video, voz, datos y control.",
+      en: "Solutions for telecom operators and corporate clients: outside plant for fiber and copper, mobile site construction, structured connectivity systems and integration of video, voice, data and control networks.",
+    },
+    items: [
+      { es: "Proyectos llave en mano para BTS", en: "Turnkey BTS projects" },
+      { es: "Mantenimiento preventivo y correctivo", en: "Preventive & corrective maintenance" },
+      { es: "Instalación de equipos de telefonía móvil", en: "Mobile telephony equipment install" },
+      { es: "Sistemas radiantes GSM, UMTS, 3G y LTE", en: "GSM, UMTS, 3G & LTE radiating systems" },
+      { es: "Site surveys", en: "Site surveys" },
+      { es: "Torres autosoportadas y monopolos", en: "Self-supporting towers & monopoles" },
+      { es: "Adecuaciones civiles, eléctricas y herrajes", en: "Civil, electrical & hardware retrofits" },
+      { es: "Pararrayos y protección eléctrica", en: "Lightning rods & electrical protection" },
+    ],
+    img: "https://images.unsplash.com/photo-1582193607281-dafb7941640f?q=80&w=1600&auto=format&fit=crop",
+    imgLabel: { es: "TELECOM", en: "TELECOM" },
+    reverse: true,
+  },
+  {
+    id: "civil",
+    num: "03",
+    eyebrow: { es: "03 — Ingeniería civil", en: "03 — Civil engineering" },
+    heading: { es: "Construcción Civil e Industrial", en: "Civil & Industrial Construction" },
+    intro: {
+      es: "Desde fundaciones críticas hasta naves industriales completas. Manejamos obras estructurales, pavimentaciones portuarias, edificios comerciales, plantas industriales y adecuaciones para clientes gubernamentales y privados.",
+      en: "From critical foundations to complete industrial buildings. Structural works, port paving, commercial buildings, industrial plants and retrofits for government and private clients.",
+    },
+    items: [
+      { es: "Estructuras metálicas", en: "Steel structures" },
+      { es: "Fundaciones reforzadas", en: "Reinforced foundations" },
+      { es: "Naves y plantas industriales", en: "Warehouses & industrial plants" },
+      { es: "Pavimentación portuaria e industrial", en: "Port & industrial paving" },
+      { es: "Edificios comerciales y residenciales", en: "Commercial & residential buildings" },
+      { es: "Cuartos fríos y de maquinaria", en: "Cold rooms & machine rooms" },
+      { es: "Casas de fuerza y subestaciones", en: "Power houses & substations" },
+      { es: "Pesas camioneras y bases para silos", en: "Truck scales & silo bases" },
+    ],
+    img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1600&auto=format&fit=crop",
+    imgLabel: { es: "CIVIL", en: "CIVIL" },
   },
   {
     id: "remodelacion",
@@ -117,7 +117,7 @@ const SERVICES: Svc[] = [
       { es: "Demoliciones controladas", en: "Controlled demolition" },
       { es: "Centros de monitoreo y vigilancia", en: "Monitoring & surveillance centers" },
     ],
-    img: "/images/muelle-16/29.jpg",
+    img: "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?q=80&w=1600&auto=format&fit=crop",
     imgLabel: { es: "REMODELACIÓN", en: "REMODELING" },
     reverse: true,
   },
@@ -140,13 +140,14 @@ export default function ServiciosPage() {
           <h1 data-es>Servicios integrales de ingeniería e infraestructura</h1>
           <h1 data-en>Integrated engineering and infrastructure services</h1>
           <p data-es>
-            Tres áreas de negocio integradas — ingeniería civil, telecomunicaciones y
-            remodelaciones & construcción comercial — coordinadas para entregar proyectos llave en
-            mano de cualquier escala.
+            Cuatro áreas de negocio integradas — data centers, telecomunicaciones, ingeniería civil
+            y remodelaciones & construcción comercial — coordinadas para entregar proyectos llave
+            en mano de cualquier escala.
           </p>
           <p data-en>
-            Three integrated business areas — civil engineering, telecommunications and remodeling
-            & commercial construction — coordinated to deliver turnkey projects at any scale.
+            Four integrated business areas — data centers, telecommunications, civil engineering
+            and remodeling & commercial construction — coordinated to deliver turnkey projects at
+            any scale.
           </p>
         </div>
       </section>

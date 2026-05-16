@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
 import TrustedCarousel from "@/components/TrustedCarousel";
+import HomeFeatured from "@/components/HomeFeatured";
 
 export const metadata: Metadata = {
   title: "Servicios Rojas, S.A. | Ingeniería Civil y Telecomunicaciones en Panamá",
@@ -35,14 +36,14 @@ export default function HomePage() {
               </h1>
               <p className="hero-sub">
                 <span data-es>
-                  Soluciones integradas en ingeniería civil, telecomunicaciones y remodelaciones &
-                  construcción comercial. Proyectos llave en mano para operadores, gobierno y
-                  desarrolladores industriales desde 1997.
+                  Soluciones integradas en ingeniería civil, telecomunicaciones, <strong>data
+                  centers</strong> y remodelaciones & construcción comercial. Proyectos llave en
+                  mano para operadores, gobierno y desarrolladores industriales desde 1997.
                 </span>
                 <span data-en>
-                  Integrated solutions across civil engineering, telecommunications and remodeling
-                  & commercial construction. Turnkey projects for operators, government and
-                  industrial developers since 1997.
+                  Integrated solutions across civil engineering, telecommunications, <strong>data
+                  centers</strong> and remodeling & commercial construction. Turnkey projects for
+                  operators, government and industrial developers since 1997.
                 </span>
               </p>
               <div className="hero-actions">
@@ -81,9 +82,9 @@ export default function HomePage() {
                 <div className="k" data-en>Telecom sites<br/>under maintenance</div>
               </div>
               <div className="hero-stat-row">
-                <div className="v">3</div>
-                <div className="k" data-es>Áreas de negocio<br/>integradas</div>
-                <div className="k" data-en>Integrated<br/>business areas</div>
+                <div className="v">4</div>
+                <div className="k" data-es>Áreas integradas<br/>(incl. Data Centers)</div>
+                <div className="k" data-en>Integrated areas<br/>(incl. Data Centers)</div>
               </div>
             </div>
           </div>
@@ -105,27 +106,28 @@ export default function HomePage() {
                 data-es
               >
                 Brindamos soluciones integradas en proyectos de ingeniería civil,
-                telecomunicaciones y remodelaciones & construcción comercial. Desarrollamos
-                proyectos llave en mano, diferenciándonos por el cumplimiento en la ejecución, la
-                calidad y el profesionalismo.
+                telecomunicaciones, data centers y remodelaciones & construcción comercial. Diseñamos
+                y construimos data centers y salas técnicas llave en mano, diferenciándonos por el
+                cumplimiento en la ejecución, la calidad y el profesionalismo.
               </p>
               <p
                 style={{ marginTop: 20, color: "var(--slate-500)", fontSize: 17, lineHeight: 1.8 }}
                 data-en
               >
-                We provide integrated solutions across civil engineering, telecommunications and
-                remodeling & commercial construction. Our turnkey projects stand out for execution
-                discipline, quality, and professionalism.
+                We provide integrated solutions across civil engineering, telecommunications, data
+                centers and remodeling & commercial construction. We design and build turnkey data
+                centers and server rooms, standing out for execution discipline, quality, and
+                professionalism.
               </p>
               <div className="purpose-tags">
                 <span className="tag" data-es>Ingeniería Civil</span>
                 <span className="tag" data-en>Civil Engineering</span>
                 <span className="tag" data-es>Telecomunicaciones</span>
                 <span className="tag" data-en>Telecommunications</span>
+                <span className="tag" data-es>Data Centers</span>
+                <span className="tag" data-en>Data Centers</span>
                 <span className="tag" data-es>Remodelaciones</span>
                 <span className="tag" data-en>Remodeling</span>
-                <span className="tag" data-es>Llave en Mano</span>
-                <span className="tag" data-en>Turnkey</span>
               </div>
               <Link href="/nosotros" className="btn btn-primary">
                 <span data-es>Conocer Más</span>
@@ -135,8 +137,8 @@ export default function HomePage() {
             <div className="purpose-image-wrap">
               <div className="purpose-image">
                 <Image
-                  src="/images/estructura-metalica/6.jpg"
-                  alt="Estructura metálica — Estación Metro Villa Zaita"
+                  src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1200&auto=format&fit=crop"
+                  alt="Ingenieros revisando planos en sitio de construcción"
                   fill
                   sizes="(max-width: 960px) 100vw, 600px"
                   style={{ objectFit: "cover" }}
@@ -163,14 +165,14 @@ export default function HomePage() {
             <h2 data-es>Sectores donde entregamos resultados</h2>
             <h2 data-en>Sectors where we deliver results</h2>
             <p data-es>
-              Tres áreas de negocio integradas — ingeniería civil, telecomunicaciones y
-              remodelaciones & construcción comercial — coordinadas para entregar proyectos llave
-              en mano de cualquier escala.
+              Cuatro áreas de negocio integradas — ingeniería civil, telecomunicaciones, data
+              centers y remodelaciones & construcción comercial — coordinadas para entregar
+              proyectos llave en mano de cualquier escala.
             </p>
             <p data-en>
-              Three integrated business areas — civil engineering, telecommunications and
-              remodeling & commercial construction — coordinated to deliver turnkey projects at any
-              scale.
+              Four integrated business areas — civil engineering, telecommunications, data centers
+              and remodeling & commercial construction — coordinated to deliver turnkey projects at
+              any scale.
             </p>
           </div>
           <div className="industries-grid">
@@ -214,35 +216,10 @@ export default function HomePage() {
           <div className="section-head">
             <span className="eyebrow" data-es>Proyectos destacados</span>
             <span className="eyebrow" data-en>Featured projects</span>
-            <h2 data-es>Proyectos de fábrica e infraestructura crítica</h2>
-            <h2 data-en>Factory and critical infrastructure projects</h2>
+            <h2 data-es>Proyectos de data centers, telecom e infraestructura crítica</h2>
+            <h2 data-en>Data center, telecom and critical infrastructure projects</h2>
           </div>
-          <div className="projects-grid">
-            {FEATURED.map((p) => (
-              <article key={p.title.es} className="project">
-                <div className="project-img">
-                  <span className="project-cat">{p.tag}</span>
-                  <Image
-                    src={p.img}
-                    alt={p.title.es}
-                    fill
-                    sizes="(max-width: 760px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    style={{ objectFit: "cover" }}
-                  />
-                </div>
-                <div className="project-body">
-                  <h3 data-es>{p.title.es}</h3>
-                  <h3 data-en>{p.title.en}</h3>
-                  <p data-es>{p.desc.es}</p>
-                  <p data-en>{p.desc.en}</p>
-                  <div className="project-meta">
-                    <span>📍 {p.location}</span>
-                    <strong>{p.year}</strong>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+          <HomeFeatured />
           <div style={{ textAlign: "center", marginTop: 50 }}>
             <Link href="/proyectos" className="btn btn-dark">
               <span data-es>Ver Todos los Proyectos</span>
@@ -332,28 +309,8 @@ function StatBanner({
 const INDUSTRIES = [
   {
     num: "01",
-    href: "/servicios#telecom",
-    img: "/images/76-sitios-tigo/41.jpg",
-    title: { es: "Telecomunicaciones", en: "Telecommunications" },
-    desc: {
-      es: "Torres, antenas, enlaces, mantenimiento y BTS llave en mano.",
-      en: "Towers, antennas, links, maintenance and turnkey BTS.",
-    },
-  },
-  {
-    num: "02",
-    href: "/servicios#civil",
-    img: "/images/estructura-metalica/7.jpg",
-    title: { es: "Ingeniería Civil", en: "Civil Engineering" },
-    desc: {
-      es: "Obras industriales, fundaciones, naves, pavimentación y edificios.",
-      en: "Industrial works, foundations, warehouses, paving and buildings.",
-    },
-  },
-  {
-    num: "03",
     href: "/servicios#data",
-    img: "/images/datacenter-fusion/60.jpg",
+    img: "https://images.unsplash.com/photo-1597733336794-12d05021d510?q=80&w=1600&auto=format&fit=crop",
     title: { es: "Data Centers", en: "Data Centers" },
     desc: {
       es: "Salas técnicas, pisos elevados, UPS, climatización y eléctrico crítico.",
@@ -361,9 +318,29 @@ const INDUSTRIES = [
     },
   },
   {
+    num: "02",
+    href: "/servicios#telecom",
+    img: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=1600&auto=format&fit=crop",
+    title: { es: "Telecomunicaciones", en: "Telecommunications" },
+    desc: {
+      es: "Torres, antenas, enlaces, mantenimiento y BTS llave en mano.",
+      en: "Towers, antennas, links, maintenance and turnkey BTS.",
+    },
+  },
+  {
+    num: "03",
+    href: "/servicios#civil",
+    img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600&auto=format&fit=crop",
+    title: { es: "Ingeniería Civil", en: "Civil Engineering" },
+    desc: {
+      es: "Obras industriales, fundaciones, naves, pavimentación y edificios.",
+      en: "Industrial works, foundations, warehouses, paving and buildings.",
+    },
+  },
+  {
     num: "04",
     href: "/servicios#remodelacion",
-    img: "/images/muelle-16/29.jpg",
+    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop",
     title: {
       es: "Remodelaciones y Construcción Comercial",
       en: "Remodeling & Commercial Construction",
@@ -375,47 +352,3 @@ const INDUSTRIES = [
   },
 ];
 
-const FEATURED = [
-  {
-    tag: "CIVIL",
-    img: "/images/estructura-metalica/5.jpg",
-    title: {
-      es: "Estructura Metálica — Metro Villa Zaita",
-      en: "Steel Structure — Villa Zaita Metro",
-    },
-    desc: {
-      es: "Instalación de estructura metálica en la estación del Metro de Villa Zaita para Grupo ITM.",
-      en: "Steel structure installation at the Villa Zaita Metro station for Grupo ITM.",
-    },
-    location: "Villa Zaita, Panamá",
-    year: "2023",
-  },
-  {
-    tag: "TELECOM",
-    img: "/images/76-sitios-tigo/41.jpg",
-    title: {
-      es: "76 Sitios Tigo — Llave en Mano",
-      en: "76 Tigo Sites — Turnkey",
-    },
-    desc: {
-      es: "Construcción llave en mano de 76 sitios para la red Tigo de Millicom a nivel nacional.",
-      en: "Turnkey construction of 76 nationwide sites for the Millicom Tigo network.",
-    },
-    location: "Nacional",
-    year: "En ejecución",
-  },
-  {
-    tag: "DATA CENTER",
-    img: "/images/datacenter-fusion/59.jpg",
-    title: {
-      es: "Datacenter Fusion Module 2000 — Claro",
-      en: "Fusion Module 2000 Datacenter — Claro",
-    },
-    desc: {
-      es: "Adecuación civil e instalación del Datacenter Fusion Module 2000 para Claro Panamá.",
-      en: "Civil retrofit and Fusion Module 2000 datacenter install for Claro Panamá.",
-    },
-    location: "Ciudad de Panamá",
-    year: "2018 — 2019",
-  },
-];

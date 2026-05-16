@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import ProjectLightbox from "./ProjectLightbox";
 
 export type ProjectCategory = "all" | "TELECOM" | "CIVIL" | "DATA" | "MAINT";
 
@@ -27,8 +28,17 @@ const CATEGORIES: { id: ProjectCategory; es: string; en: string }[] = [
 
 export default function ProjectFilter({ projects }: { projects: ProjectItem[] }) {
   const [active, setActive] = useState<ProjectCategory>("all");
+  const [openProject, setOpenProject] = useState<ProjectItem | null>(null);
+  const [imageIndex, setImageIndex] = useState(0);
 
   const visible = projects.filter((p) => active === "all" || p.cat === active);
+
+  const openGallery = (project: ProjectItem) => {
+    if (project.gallery && project.gallery.length > 0) {
+      setOpenProject(project);
+      setImageIndex(0);
+    }
+  };
 
   return (
     <>
@@ -47,16 +57,48 @@ export default function ProjectFilter({ projects }: { projects: ProjectItem[] })
       </div>
       <div className="projects-grid">
         {visible.map((p) => (
-          <ProjectCard key={p.slug} item={p} />
+          <ProjectCard key={p.slug} item={p} onOpen={() => openGallery(p)} />
         ))}
       </div>
+      {openProject?.gallery && (
+        <ProjectLightbox
+          images={openProject.gallery}
+          title={openProject.title}
+          currentIndex={imageIndex}
+          onClose={() => setOpenProject(null)}
+          onNavigate={setImageIndex}
+        />
+      )}
     </>
   );
 }
 
-function ProjectCard({ item }: { item: ProjectItem }) {
+function ProjectCard({ item, onOpen }: { item: ProjectItem; onOpen: () => void }) {
+  const hasGallery = !!(item.gallery && item.gallery.length > 0);
+  const galleryCount = item.gallery?.length ?? 0;
+
+  const interactiveProps = hasGallery
+    ? {
+        role: "button" as const,
+        tabIndex: 0,
+        onClick: onOpen,
+        onKeyDown: (e: React.KeyboardEvent<HTMLElement>) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            onOpen();
+          }
+        },
+        "aria-label": `Abrir galería: ${item.title.es}`,
+      }
+    : { style: { cursor: "default" as const } };
+
   return (
-    <article className="project" itemScope itemType="https://schema.org/CreativeWork">
+    <article
+      className={`project${hasGallery ? " project-clickable" : ""}`}
+      itemScope
+      itemType="https://schema.org/CreativeWork"
+      {...interactiveProps}
+    >
       <div className="project-img">
         <span className="project-cat">{item.tagLabel}</span>
         <Image
@@ -67,6 +109,17 @@ function ProjectCard({ item }: { item: ProjectItem }) {
           style={{ objectFit: "cover" }}
           itemProp="image"
         />
+        {hasGallery && (
+          <span className="project-gallery-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                fill="currentColor"
+                d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-12.5-5.5 2.5 3.01L14.5 12l4.5 6H5z"
+              />
+            </svg>
+            {galleryCount}
+          </span>
+        )}
       </div>
       <div className="project-body">
         <h3 data-es itemProp="name">{item.title.es}</h3>
