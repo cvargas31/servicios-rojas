@@ -111,7 +111,7 @@ export default function NosotrosPage() {
         </div>
       </Reveal>
 
-      <Reveal className="stats-banner">
+      {/* <Reveal className="stats-banner">
         <div className="container">
           <div className="stats-banner-grid">
             <Stat to={29} es="Años" en="Years" />
@@ -120,7 +120,7 @@ export default function NosotrosPage() {
             <Stat to={15} es="Clientes Recurrentes" en="Repeat Clients" />
           </div>
         </div>
-      </Reveal>
+      </Reveal> */}
 
       <Reveal as="section" className="cta">
         <div className="cta-glow"></div>
