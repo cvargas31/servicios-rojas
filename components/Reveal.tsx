@@ -6,9 +6,10 @@ type Props = {
   children: ReactNode;
   className?: string;
   as?: "section" | "div";
+  id?: string;
 };
 
-export default function Reveal({ children, className = "", as = "section" }: Props) {
+export default function Reveal({ children, className = "", as = "section", id }: Props) {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -31,5 +32,5 @@ export default function Reveal({ children, className = "", as = "section" }: Pro
 
   const Tag = as as keyof JSX.IntrinsicElements;
   // @ts-expect-error - dynamic tag with ref
-  return <Tag ref={ref} className={`reveal ${className}`.trim()}>{children}</Tag>;
+  return <Tag ref={ref} id={id} className={`reveal ${className}`.trim()}>{children}</Tag>;
 }

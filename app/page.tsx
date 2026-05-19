@@ -24,68 +24,94 @@ export default function HomePage() {
   return (
     <>
       <section className="hero">
-        <div className="hero-bg-shape"></div>
-        <div className="container">
-          <div className="hero-grid">
-            <div>
-              <span className="eyebrow" data-es>Ingeniería e infraestructura · Panamá</span>
-              <span className="eyebrow" data-en>Engineering & infrastructure · Panama</span>
+        <div className="hero-split">
+          <div className="hero-photo">
+            <Image
+              src="/images/sr-hero-banner.jpg"
+              alt="Infraestructura crítica y telecomunicaciones"
+              fill
+              sizes="(max-width: 1024px) 100vw, 55vw"
+              priority
+              style={{ objectFit: "cover" }}
+            />
+            <div className="hero-photo-tint" />
+            <div className="hero-wordmark" aria-hidden="true">
+              <span>Servicios<br/>Rojas</span>
+            </div>
+          </div>
+
+          <div className="hero-content">
+            <div className="hero-content-inner">
+              <span className="eyebrow" data-es>Servicios Rojas · Panamá</span>
+              <span className="eyebrow" data-en>Servicios Rojas · Panama</span>
               <h1>
-                <span data-es>Construyendo la <em>infraestructura</em> que mueve a Panamá</span>
-                <span data-en>Building the <em>infrastructure</em> that moves Panama</span>
+                <span data-es>Impulsando el progreso a través de la infraestructura crítica</span>
+                <span data-en>Powering progress through critical infrastructure</span>
               </h1>
               <p className="hero-sub">
                 <span data-es>
-                  Soluciones integradas en ingeniería civil, telecomunicaciones, <strong>data
-                  centers</strong> y remodelaciones & construcción comercial. Proyectos llave en
-                  mano para operadores, gobierno y desarrolladores industriales desde 1997.
+                  Con compromiso de calidad, ingeniería de precisión y entregas a tiempo,
+                  convertimos tus proyectos de telecomunicaciones, data centers e ingeniería civil
+                  en realidad — llave en mano desde 1997.
                 </span>
                 <span data-en>
-                  Integrated solutions across civil engineering, telecommunications, <strong>data
-                  centers</strong> and remodeling & commercial construction. Turnkey projects for
-                  operators, government and industrial developers since 1997.
+                  With a commitment to quality craftsmanship, precision engineering and timely
+                  delivery, we turn your telecom, data center and civil engineering concepts into
+                  concrete reality — turnkey since 1997.
                 </span>
               </p>
               <div className="hero-actions">
-                <Link href="/contacto" className="btn btn-primary">
-                  <span data-es>Solicitar Cotización</span>
-                  <span data-en>Request Quote</span>
+                <Link href="/contacto" className="btn btn-pill">
+                  <span data-es>Descubrir</span>
+                  <span data-en>Discover</span>
                 </Link>
-                <Link href="/proyectos" className="btn btn-outline">
-                  <span data-es>Ver Proyectos</span>
-                  <span data-en>View Projects</span>
+                <Link href="/proyectos" className="hero-link">
+                  <span data-es>Ver proyectos</span>
+                  <span data-en>View projects</span>
                 </Link>
-              </div>
-              <div className="hero-trust">
-                <span className="hero-trust-text" data-es>Confían en nosotros:</span>
-                <span className="hero-trust-text" data-en>Trusted by:</span>
-                <span style={{ color: "rgba(255,255,255,0.85)", fontWeight: 700 }}>
-                  PHOENIX TOWER · TIGO · CABLE &amp; WIRELESS · HUAWEI · ZTE · CLARO
-                </span>
               </div>
             </div>
-            <div className="hero-stats-card">
-              <h3>
-                <small data-es>Resultados que importan</small>
-                <small data-en>Results that matter</small>
-                <span data-es>29 años de proyectos llave en mano</span>
-                <span data-en>29 years of turnkey projects</span>
-              </h3>
-              <div className="hero-stat-row">
-                <div className="v">1997</div>
-                <div className="k" data-es>Año de fundación<br/>en Panamá</div>
-                <div className="k" data-en>Founded<br/>in Panama</div>
-              </div>
-              <div className="hero-stat-row">
-                <div className="v">200+</div>
-                <div className="k" data-es>Sitios telecom<br/>en mantenimiento</div>
-                <div className="k" data-en>Telecom sites<br/>under maintenance</div>
-              </div>
-              <div className="hero-stat-row">
-                <div className="v">4</div>
-                <div className="k" data-es>Áreas integradas<br/>(incl. Data Centers)</div>
-                <div className="k" data-en>Integrated areas<br/>(incl. Data Centers)</div>
-              </div>
+
+            <div className="hero-cards">
+              <Link href="/servicios#telecom" className="hero-card">
+                <Image
+                  src="/images/76-sitios-tigo/42.jpg"
+                  alt="Sitio telecom Tigo en Panamá — mantenimiento por Servicios Rojas"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, (max-width: 1600px) 280px, 420px"
+                  style={{ objectFit: "cover" }}
+                />
+                <div className="hero-card-overlay">
+                  <div className="hero-card-num">
+                    <Counter to={200} />
+                    +
+                  </div>
+                  <div className="hero-card-label">
+                    <span data-es>Sitios telecom<br/>en mantenimiento</span>
+                    <span data-en>Telecom sites<br/>under maintenance</span>
+                  </div>
+                </div>
+                <span className="hero-card-arrow" aria-hidden="true">↗</span>
+              </Link>
+              <Link href="/proyectos" className="hero-card">
+                <Image
+                  src="/images/data-center-howard-etapa2/34.jpg"
+                  alt="Data center Howard etapa 2 — Servicios Rojas"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, (max-width: 1600px) 280px, 420px"
+                  style={{ objectFit: "cover" }}
+                />
+                <div className="hero-card-overlay">
+                  <div className="hero-card-num">
+                     <Counter to={5} /> +
+                  </div>
+                  <div className="hero-card-label">
+                    <span data-es>Años entregando<br/> Data centers</span>
+                    <span data-en>Years of <br/>delivering data centers</span>
+                  </div>
+                </div>
+                <span className="hero-card-arrow" aria-hidden="true">↗</span>
+              </Link>
             </div>
           </div>
         </div>

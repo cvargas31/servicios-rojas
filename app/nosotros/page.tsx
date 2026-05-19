@@ -23,13 +23,6 @@ export default function NosotrosPage() {
     <>
       <section className="page-hero">
         <div className="container">
-          <div className="crumbs">
-            <Link href="/" data-es>Inicio</Link>
-            <Link href="/" data-en>Home</Link>
-            <span>/</span>
-            <span data-es>Nosotros</span>
-            <span data-en>About</span>
-          </div>
           <span className="eyebrow" data-es>Nuestra historia</span>
           <span className="eyebrow" data-en>Our story</span>
           <h1 data-es>Construyendo Panamá desde 1997</h1>

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
@@ -20,27 +20,50 @@ export const metadata: Metadata = {
 export default function ContactoPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <div className="crumbs">
-            <Link href="/" data-es>Inicio</Link>
-            <Link href="/" data-en>Home</Link>
-            <span>/</span>
-            <span data-es>Contacto</span>
-            <span data-en>Contact</span>
+      <section className="hero hero--page">
+        <div className="hero-split">
+          <div className="hero-photo">
+            <Image
+              src="/images/sr-hero-banner.jpg"
+              alt="Equipo de ingeniería Servicios Rojas en Panamá"
+              fill
+              sizes="(max-width: 1024px) 100vw, 55vw"
+              priority
+              style={{ objectFit: "cover" }}
+            />
+            <div className="hero-photo-tint" />
+            <div className="hero-wordmark" aria-hidden="true">
+              <span>Contacto</span>
+            </div>
           </div>
-          <span className="eyebrow" data-es>Hablemos</span>
-          <span className="eyebrow" data-en>Let&apos;s talk</span>
-          <h1 data-es>Inicia tu próximo proyecto con nosotros</h1>
-          <h1 data-en>Start your next project with us</h1>
-          <p data-es>
-            Respondemos cotizaciones en menos de 24 horas hábiles. Cuéntanos el alcance, plazo y
-            requerimientos técnicos.
-          </p>
-          <p data-en>
-            We respond within 24 business hours. Tell us scope, timeline and technical
-            requirements.
-          </p>
+
+          <div className="hero-content">
+            <div className="hero-content-inner">
+              <span className="eyebrow" data-es>Hablemos</span>
+              <span className="eyebrow" data-en>Let&apos;s talk</span>
+              <h1 data-es>Inicia tu próximo proyecto con nosotros</h1>
+              <h1 data-en>Start your next project with us</h1>
+              <p className="hero-sub" data-es>
+                Respondemos cotizaciones en menos de 24 horas hábiles. Cuéntanos el alcance, plazo
+                y requerimientos técnicos.
+              </p>
+              <p className="hero-sub" data-en>
+                We respond within 24 business hours. Tell us scope, timeline and technical
+                requirements.
+              </p>
+              <div className="hero-actions">
+                <a href="tel:+5072298840" className="btn btn-pill">+507 229-8840</a>
+                <a
+                  href="https://wa.me/50766888362"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-link"
+                >
+                  WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

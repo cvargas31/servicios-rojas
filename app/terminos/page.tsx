@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,13 +13,6 @@ export default function TerminosPage() {
     <>
       <section className="page-hero">
         <div className="container">
-          <div className="crumbs">
-            <Link href="/" data-es>Inicio</Link>
-            <Link href="/" data-en>Home</Link>
-            <span>/</span>
-            <span data-es>Términos</span>
-            <span data-en>Terms</span>
-          </div>
           <span className="eyebrow" data-es>Legal</span>
           <span className="eyebrow" data-en>Legal</span>
           <h1 data-es>Términos de Uso</h1>

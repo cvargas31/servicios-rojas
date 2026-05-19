@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import ProjectFilter from "@/components/ProjectFilter";
 import { PROJECTS } from "@/components/projects-data";
@@ -22,31 +23,53 @@ export const metadata: Metadata = {
 export default function ProyectosPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <div className="crumbs">
-            <Link href="/" data-es>Inicio</Link>
-            <Link href="/" data-en>Home</Link>
-            <span>/</span>
-            <span data-es>Proyectos</span>
-            <span data-en>Projects</span>
+      <section className="hero hero--page">
+        <div className="hero-split">
+          <div className="hero-photo">
+            <Image
+              src="/images/data-center-howard-etapa2/34.jpg"
+              alt="Data center Howard etapa 2 — Servicios Rojas"
+              fill
+              sizes="(max-width: 1024px) 100vw, 55vw"
+              priority
+              style={{ objectFit: "cover" }}
+            />
+            <div className="hero-photo-tint" />
+            <div className="hero-wordmark" aria-hidden="true">
+              <span>Portafolio</span>
+            </div>
           </div>
-          <span className="eyebrow" data-es>Portafolio</span>
-          <span className="eyebrow" data-en>Portfolio</span>
-          <h1 data-es>Proyectos que han transformado la infraestructura panameña</h1>
-          <h1 data-en>Projects transforming Panama&apos;s infrastructure</h1>
-          <p data-es>
-            Una selección de proyectos representativos entregados a clientes corporativos,
-            operadores telecom, gobierno y desarrolladores industriales.
-          </p>
-          <p data-en>
-            A selection of representative projects delivered to corporate clients, telecom
-            operators, government and industrial developers.
-          </p>
+
+          <div className="hero-content">
+            <div className="hero-content-inner">
+              <span className="eyebrow" data-es>Portafolio</span>
+              <span className="eyebrow" data-en>Portfolio</span>
+              <h1 data-es>Proyectos que han transformado la infraestructura panameña</h1>
+              <h1 data-en>Projects transforming Panama&apos;s infrastructure</h1>
+              <p className="hero-sub" data-es>
+                Una selección de proyectos representativos entregados a clientes corporativos,
+                operadores telecom, gobierno y desarrolladores industriales.
+              </p>
+              <p className="hero-sub" data-en>
+                A selection of representative projects delivered to corporate clients, telecom
+                operators, government and industrial developers.
+              </p>
+              <div className="hero-actions">
+                <Link href="/contacto" className="btn btn-pill">
+                  <span data-es>Cotizar Proyecto</span>
+                  <span data-en>Quote Project</span>
+                </Link>
+                <a href="#proyectos-grid" className="hero-link">
+                  <span data-es>Ver portafolio</span>
+                  <span data-en>View portfolio</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <Reveal as="section" className="projects-bg">
+      <Reveal as="section" id="proyectos-grid" className="projects-bg">
         <div className="container">
           <ProjectFilter projects={PROJECTS} />
         </div>

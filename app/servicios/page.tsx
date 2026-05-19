@@ -126,29 +126,47 @@ const SERVICES: Svc[] = [
 export default function ServiciosPage() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <div className="crumbs">
-            <Link href="/" data-es>Inicio</Link>
-            <Link href="/" data-en>Home</Link>
-            <span>/</span>
-            <span data-es>Servicios</span>
-            <span data-en>Services</span>
+      <section className="hero hero--page">
+        <div className="hero-split">
+          <div className="hero-photo">
+            <Image
+              src="/images/sr-hero-banner.jpg"
+              alt="Servicios de ingeniería e infraestructura — Servicios Rojas"
+              fill
+              sizes="(max-width: 1024px) 100vw, 55vw"
+              priority
+              style={{ objectFit: "cover" }}
+            />
+            <div className="hero-photo-tint" />
+            <div className="hero-wordmark" aria-hidden="true">
+              <span>Servicios</span>
+            </div>
           </div>
-          <span className="eyebrow" data-es>Lo que hacemos</span>
-          <span className="eyebrow" data-en>What we do</span>
-          <h1 data-es>Servicios integrales de ingeniería e infraestructura</h1>
-          <h1 data-en>Integrated engineering and infrastructure services</h1>
-          <p data-es>
-            Cuatro áreas de negocio integradas — data centers, telecomunicaciones, ingeniería civil
-            y remodelaciones & construcción comercial — coordinadas para entregar proyectos llave
-            en mano de cualquier escala.
-          </p>
-          <p data-en>
-            Four integrated business areas — data centers, telecommunications, civil engineering
-            and remodeling & commercial construction — coordinated to deliver turnkey projects at
-            any scale.
-          </p>
+
+          <div className="hero-content">
+            <div className="hero-content-inner">
+              <span className="eyebrow" data-es>Lo que hacemos</span>
+              <span className="eyebrow" data-en>What we do</span>
+              <h1 data-es>Servicios integrales de ingeniería e infraestructura</h1>
+              <h1 data-en>Integrated engineering and infrastructure services</h1>
+              <p className="hero-sub" data-es>
+                Cuatro áreas de negocio integradas — data centers, telecomunicaciones, ingeniería
+                civil y remodelaciones & construcción comercial — coordinadas para entregar
+                proyectos llave en mano de cualquier escala.
+              </p>
+              <p className="hero-sub" data-en>
+                Four integrated business areas — data centers, telecommunications, civil
+                engineering and remodeling & commercial construction — coordinated to deliver
+                turnkey projects at any scale.
+              </p>
+              <div className="hero-actions">
+                <Link href="/contacto" className="btn btn-pill">
+                  <span data-es>Cotizar Proyecto</span>
+                  <span data-en>Quote Project</span>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

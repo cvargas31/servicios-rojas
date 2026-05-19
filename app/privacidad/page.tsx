@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,13 +13,6 @@ export default function PrivacidadPage() {
     <>
       <section className="page-hero">
         <div className="container">
-          <div className="crumbs">
-            <Link href="/" data-es>Inicio</Link>
-            <Link href="/" data-en>Home</Link>
-            <span>/</span>
-            <span data-es>Privacidad</span>
-            <span data-en>Privacy</span>
-          </div>
           <span className="eyebrow" data-es>Política</span>
           <span className="eyebrow" data-en>Policy</span>
           <h1 data-es>Política de Privacidad</h1>
