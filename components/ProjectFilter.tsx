@@ -50,8 +50,7 @@ export default function ProjectFilter({ projects }: { projects: ProjectItem[] })
             onClick={() => setActive(c.id)}
             type="button"
           >
-            <span data-es>{c.es}</span>
-            <span data-en>{c.en}</span>
+            <span>{c.es}</span>
           </button>
         ))}
       </div>
@@ -122,10 +121,8 @@ function ProjectCard({ item, onOpen }: { item: ProjectItem; onOpen: () => void }
         )}
       </div>
       <div className="project-body">
-        <h3 data-es itemProp="name">{item.title.es}</h3>
-        <h3 data-en>{item.title.en}</h3>
-        <p data-es itemProp="description">{item.desc.es}</p>
-        <p data-en>{item.desc.en}</p>
+        <h3 itemProp="name">{item.title.es}</h3>
+        <p itemProp="description">{item.desc.es}</p>
         <div className="project-meta">
           <span itemProp="locationCreated">📍 {item.location}</span>
           <strong>{item.year}</strong>

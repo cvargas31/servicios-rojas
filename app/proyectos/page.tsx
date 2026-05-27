@@ -20,6 +20,44 @@ export const metadata: Metadata = {
   },
 };
 
+const CAPABILITIES = [
+  {
+    icon: <BuildingIcon />,
+    title: { es: "Edificaciones", en: "Buildings" },
+    desc: {
+      es: "Institucionales, comerciales e industriales.",
+      en: "Institutional, commercial and industrial.",
+    },
+  },
+  {
+    icon: <WarehouseIcon />,
+    title: { es: "Infraestructura", en: "Infrastructure" },
+    desc: {
+      es: "Galeras, workshops, reachstackers, estaciones de metro y centros de datos.",
+      en: "Warehouses, workshops, reachstackers, metro stations and data centers.",
+    },
+  },
+  {
+    icon: <RoadIcon />,
+    title: { es: "Obras Viales", en: "Road Works" },
+    desc: {
+      es: "Construcción y rehabilitación de carreteras, calles y movimientos de tierra.",
+      en: "Construction and rehabilitation of roads, streets and earthworks.",
+    },
+  },
+  {
+    icon: <BoltIcon />,
+    title: {
+      es: "Obras Eléctricas de Misión Crítica",
+      en: "Mission-Critical Electrical Works",
+    },
+    desc: {
+      es: "Diseño, construcción e instalación de sistemas eléctricos para infraestructura crítica.",
+      en: "Design, construction and installation of electrical systems for critical infrastructure.",
+    },
+  },
+];
+
 export default function ProyectosPage() {
   return (
     <>
@@ -42,26 +80,18 @@ export default function ProyectosPage() {
 
           <div className="hero-content">
             <div className="hero-content-inner">
-              <span className="eyebrow" data-es>Portafolio</span>
-              <span className="eyebrow" data-en>Portfolio</span>
-              <h1 data-es>Proyectos que han transformado la infraestructura panameña</h1>
-              <h1 data-en>Projects transforming Panama&apos;s infrastructure</h1>
-              <p className="hero-sub" data-es>
+              <span className="eyebrow">Portafolio</span>
+              <h1>Proyectos que han transformado la infraestructura panameña</h1>
+              <p className="hero-sub">
                 Una selección de proyectos representativos entregados a clientes corporativos,
                 operadores telecom, gobierno y desarrolladores industriales.
               </p>
-              <p className="hero-sub" data-en>
-                A selection of representative projects delivered to corporate clients, telecom
-                operators, government and industrial developers.
-              </p>
               <div className="hero-actions">
                 <Link href="/contacto" className="btn btn-pill">
-                  <span data-es>Cotizar Proyecto</span>
-                  <span data-en>Quote Project</span>
+                  <span>Cotizar Proyecto</span>
                 </Link>
                 <a href="#proyectos-grid" className="hero-link">
-                  <span data-es>Ver portafolio</span>
-                  <span data-en>View portfolio</span>
+                  <span>Ver portafolio</span>
                 </a>
               </div>
             </div>
@@ -71,32 +101,88 @@ export default function ProyectosPage() {
 
       <Reveal as="section" id="proyectos-grid" className="projects-bg">
         <div className="container">
-          <ProjectFilter projects={PROJECTS} />
+          <div className="projects-layout">
+            <aside className="projects-sidebar">
+              <div className="projects-sidebar-inner">
+                {CAPABILITIES.map((c, i) => (
+                  <div key={i} className="cap-item">
+                    <div className="cap-icon">{c.icon}</div>
+                    <div className="cap-body">
+                      <h4>{c.title.es}</h4>
+                      <p>{c.desc.es}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </aside>
+            <div className="projects-main">
+              <ProjectFilter projects={PROJECTS} />
+            </div>
+          </div>
         </div>
       </Reveal>
 
       <TrustedCarousel
-        label={{
-          es: "Clientes destacados que confían en nuestra ingeniería",
-          en: "Featured clients that trust our engineering",
-        }}
+        title="Clientes destacados"
+        subtitle="Empresas líderes que confían en nuestra ingeniería para sus proyectos más importantes."
       />
 
       <Reveal as="section" className="cta">
         <div className="cta-glow"></div>
         <div className="container">
-          <h2 data-es>¿Tu proyecto será el siguiente?</h2>
-          <h2 data-en>Will yours be the next project?</h2>
-          <p data-es>Cuéntanos los detalles. Prepararemos una propuesta técnica adaptada.</p>
-          <p data-en>Tell us the details. We&apos;ll prepare a tailored technical proposal.</p>
+          <h2>¿Tu proyecto será el siguiente?</h2>
+          <p>Cuéntanos los detalles. Prepararemos una propuesta técnica adaptada.</p>
           <div className="cta-actions">
             <Link href="/contacto" className="btn btn-primary">
-              <span data-es>Iniciar Proyecto</span>
-              <span data-en>Start Project</span>
+              <span>Iniciar Proyecto</span>
             </Link>
           </div>
         </div>
       </Reveal>
     </>
+  );
+}
+
+function BuildingIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M4 21V6l7-3v18" />
+      <path d="M11 21h9V9l-9-3" />
+      <path d="M6 9h2M6 12h2M6 15h2M6 18h2" />
+      <path d="M14 11h2M14 14h2M14 17h2" />
+    </svg>
+  );
+}
+
+function WarehouseIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 21V9l9-5 9 5v12" />
+      <path d="M3 21h18" />
+      <rect x="8" y="13" width="3" height="3" />
+      <rect x="11" y="13" width="3" height="3" />
+      <rect x="8" y="16" width="3" height="3" />
+      <rect x="11" y="16" width="3" height="3" />
+    </svg>
+  );
+}
+
+function RoadIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M7 3L4 21" />
+      <path d="M17 3l3 18" />
+      <path d="M12 4v2" />
+      <path d="M12 10v2" />
+      <path d="M12 16v2" />
+    </svg>
+  );
+}
+
+function BoltIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" />
+    </svg>
   );
 }

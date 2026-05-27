@@ -81,8 +81,7 @@ export default function ProjectLightbox({
       <div className="lightbox-shell" role="document">
         <header className="lightbox-head">
           <div className="lightbox-titles">
-            <h3 data-es>{title.es}</h3>
-            <h3 data-en>{title.en}</h3>
+            <h3>{title.es}</h3>
             <span className="lightbox-counter">
               {currentIndex + 1} / {total}
             </span>

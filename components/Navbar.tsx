@@ -3,52 +3,46 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { useLang } from "./LangProvider";
+import { useEffect, useState } from "react";
 
-const links: { href: string; es: string; en: string }[] = [
-  { href: "/", es: "Inicio", en: "Home" },
-  { href: "/nosotros", es: "Nosotros", en: "About" },
-  { href: "/servicios", es: "Servicios", en: "Services" },
-  { href: "/proyectos", es: "Proyectos", en: "Projects" },
-  { href: "/contacto", es: "Contacto", en: "Contact" },
+const links: { href: string; label: string }[] = [
+  { href: "/", label: "Inicio" },
+  { href: "/nosotros", label: "Nosotros" },
+  { href: "/servicios", label: "Servicios" },
+  { href: "/servicios/data-centers", label: "Data Centers" },
+  { href: "/proyectos", label: "Proyectos" },
+  { href: "/contacto", label: "Contacto" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
-  const { lang, setLang } = useLang();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 30);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const activeHref = (() => {
+    if (pathname === "/") return "/";
+    let best = "";
+    for (const l of links) {
+      if (l.href !== "/" && pathname.startsWith(l.href) && l.href.length > best.length) {
+        best = l.href;
+      }
+    }
+    return best;
+  })();
+
+  const isActive = (href: string) => href === activeHref;
 
   const close = () => setOpen(false);
 
-  const langToggle = (extraClass?: string) => (
-    <div className={`lang-toggle${extraClass ? " " + extraClass : ""}`}>
-      <button
-        data-lang="es"
-        className={lang === "es" ? "active" : undefined}
-        onClick={() => setLang("es")}
-        type="button"
-        aria-label="Español"
-      >
-        ES
-      </button>
-      <button
-        data-lang="en"
-        className={lang === "en" ? "active" : undefined}
-        onClick={() => setLang("en")}
-        type="button"
-        aria-label="English"
-      >
-        EN
-      </button>
-    </div>
-  );
-
   return (
-    <nav className="nav">
+    <nav className={`nav${scrolled ? " nav--scrolled" : ""}${open ? " nav--menu-open" : ""}${pathname !== "/" ? " nav--solid" : ""}`}>
       <div className="nav-inner">
         <Link href="/" className="logo" onClick={close} aria-label="Servicios Rojas, S.A.">
           <Image
@@ -77,43 +71,28 @@ export default function Navbar() {
                 href={l.href}
                 className={isActive(l.href) ? "active" : undefined}
                 onClick={close}
-                data-es
               >
-                {l.es}
-              </Link>
-              <Link
-                href={l.href}
-                className={isActive(l.href) ? "active" : undefined}
-                onClick={close}
-                data-en
-              >
-                {l.en}
+                {l.label}
               </Link>
             </li>
           ))}
-          <li className="nav-mobile-only nav-drawer-extra">
-            {langToggle()}
-          </li>
           <li className="nav-mobile-only nav-drawer-extra">
             <Link
               href="/contacto"
               className="btn btn-primary nav-drawer-cta"
               onClick={close}
             >
-              <span data-es>Cotizar</span>
-              <span data-en>Quote</span>
+              Cotizar
             </Link>
           </li>
         </ul>
         <div className="nav-actions">
-          {langToggle("nav-desktop-only")}
           <Link
             href="/contacto"
             className="btn btn-primary nav-desktop-only"
             style={{ padding: "10px 20px", fontSize: 13 }}
           >
-            <span data-es>Cotizar</span>
-            <span data-en>Quote</span>
+            Cotizar
           </Link>
           <button
             className="menu-toggle"

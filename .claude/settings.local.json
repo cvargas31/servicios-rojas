@@ -9,7 +9,12 @@
       "Bash(npx --yes next build)",
       "Bash(npx next *)",
       "Bash(npx tsc *)",
-      "Bash(npx --yes tsc --noEmit --pretty false)"
+      "Bash(npx --yes tsc --noEmit --pretty false)",
+      "Bash(mkdir -p /tmp/pptx_extract)",
+      "Read(//tmp/**)",
+      "Bash(unzip -o \"C:/Users/Cristhian/projects/servicios-rojas/public/Presentación1 v1.pptx\" -d ./contenido)",
+      "Bash(sed 's/.*\\\\.//')",
+      "Bash(npm audit *)"
     ]
   }
 }

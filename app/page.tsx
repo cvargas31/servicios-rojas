@@ -5,6 +5,7 @@ import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
 import TrustedCarousel from "@/components/TrustedCarousel";
 import HomeFeatured from "@/components/HomeFeatured";
+import HeroStatsCarousel from "@/components/HeroStatsCarousel";
 
 export const metadata: Metadata = {
   title: "Servicios Rojas, S.A. | Ingeniería Civil y Telecomunicaciones en Panamá",
@@ -23,96 +24,54 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <section className="hero">
-        <div className="hero-split">
-          <div className="hero-photo">
-            <Image
-              src="/images/sr-hero-banner.jpg"
-              alt="Infraestructura crítica y telecomunicaciones"
-              fill
-              sizes="(max-width: 1024px) 100vw, 55vw"
-              priority
-              style={{ objectFit: "cover" }}
-            />
-            <div className="hero-photo-tint" />
-            <div className="hero-wordmark" aria-hidden="true">
-              <span>Servicios<br/>Rojas</span>
-            </div>
+      <section className="hero-v2">
+        <div className="hero-v2-bg">
+          <Image
+            src="/images/header-background.jpeg"
+            alt="Infraestructura crítica de telecomunicaciones y data centers en Panamá"
+            fill
+            sizes="100vw"
+            priority
+          />
+          <div className="hero-v2-overlay" />
+          <div className="hero-v2-glow-left" aria-hidden="true" />
+          <div className="hero-v2-glow-right" aria-hidden="true" />
+          <div className="hero-v2-streaks" aria-hidden="true" />
+        </div>
+
+        <div className="hero-v2-inner">
+          <p className="hero-v2-eyebrow">
+            <span>INFRAESTRUCTURA QUE <em>CONECTA</em>, TECNOLOGÍA QUE <em>IMPULSA</em></span>
+          </p>
+
+          <h1 className="hero-v2-title">
+            <span>Construimos el futuro<br/>de las <em>telecomunicaciones</em></span>
+          </h1>
+
+          <p className="hero-v2-cats">
+            <span>TORRES <span>•</span> FIBRA ÓPTICA <span>•</span> DATA CENTERS <span>•</span> OBRAS CIVILES ESPECIALIZADAS</span>
+          </p>
+
+          <p className="hero-v2-sub">
+            <span>Diseñamos y ejecutamos infraestructura crítica con ingeniería de precisión, calidad comprobada y compromiso en cada etapa.</span>
+          </p>
+
+          <div className="hero-v2-cta">
+            <Link href="/contacto" className="btn-cta-primary">
+              <span>Cotiza tu proyecto</span>
+            </Link>
+            <Link href="/proyectos" className="btn-cta-ghost">
+              <span>Ver proyectos</span>
+            </Link>
           </div>
 
-          <div className="hero-content">
-            <div className="hero-content-inner">
-              <span className="eyebrow" data-es>Servicios Rojas · Panamá</span>
-              <span className="eyebrow" data-en>Servicios Rojas · Panama</span>
-              <h1>
-                <span data-es>Impulsando el progreso a través de la infraestructura crítica</span>
-                <span data-en>Powering progress through critical infrastructure</span>
-              </h1>
-              <p className="hero-sub">
-                <span data-es>
-                  Con compromiso de calidad, ingeniería de precisión y entregas a tiempo,
-                  convertimos tus proyectos de telecomunicaciones, data centers e ingeniería civil
-                  en realidad — llave en mano desde 1997.
-                </span>
-                <span data-en>
-                  With a commitment to quality craftsmanship, precision engineering and timely
-                  delivery, we turn your telecom, data center and civil engineering concepts into
-                  concrete reality — turnkey since 1997.
-                </span>
-              </p>
-              <div className="hero-actions">
-                <Link href="/contacto" className="btn btn-pill">
-                  <span data-es>Descubrir</span>
-                  <span data-en>Discover</span>
-                </Link>
-                <Link href="/proyectos" className="hero-link">
-                  <span data-es>Ver proyectos</span>
-                  <span data-en>View projects</span>
-                </Link>
-              </div>
-            </div>
+          <HeroStatsCarousel />
+        </div>
 
-            <div className="hero-cards">
-              <Link href="/servicios#telecom" className="hero-card">
-                <Image
-                  src="/images/76-sitios-tigo/42.jpg"
-                  alt="Sitio telecom Tigo en Panamá — mantenimiento por Servicios Rojas"
-                  fill
-                  sizes="(max-width: 1024px) 50vw, (max-width: 1600px) 280px, 420px"
-                  style={{ objectFit: "cover" }}
-                />
-                <div className="hero-card-overlay">
-                  <div className="hero-card-num">
-                    <Counter to={200} />
-                    +
-                  </div>
-                  <div className="hero-card-label">
-                    <span data-es>Sitios telecom<br/>en mantenimiento</span>
-                    <span data-en>Telecom sites<br/>under maintenance</span>
-                  </div>
-                </div>
-                <span className="hero-card-arrow" aria-hidden="true">↗</span>
-              </Link>
-              <Link href="/proyectos" className="hero-card">
-                <Image
-                  src="/images/data-center-howard-etapa2/34.jpg"
-                  alt="Data center Howard etapa 2 — Servicios Rojas"
-                  fill
-                  sizes="(max-width: 1024px) 50vw, (max-width: 1600px) 280px, 420px"
-                  style={{ objectFit: "cover" }}
-                />
-                <div className="hero-card-overlay">
-                  <div className="hero-card-num">
-                     <Counter to={5} /> +
-                  </div>
-                  <div className="hero-card-label">
-                    <span data-es>Años entregando<br/> Data centers</span>
-                    <span data-en>Years of <br/>delivering data centers</span>
-                  </div>
-                </div>
-                <span className="hero-card-arrow" aria-hidden="true">↗</span>
-              </Link>
-            </div>
+        <div className="hero-v2-badge247" aria-label="Servicio 24/7">
+          <div className="hero-v2-badge247-ring">24/7</div>
+          <div className="hero-v2-badge247-text">
+            <span>Infraestructura<br/>que nunca se detiene</span>
           </div>
         </div>
       </section>
@@ -123,48 +82,31 @@ export default function HomePage() {
         <div className="container">
           <div className="purpose-grid">
             <div>
-              <span className="eyebrow" data-es>Nuestro propósito</span>
-              <span className="eyebrow" data-en>Our purpose</span>
-              <h2 data-es>Construyendo un futuro de infraestructura sostenible</h2>
-              <h2 data-en>Building a sustainable infrastructure future</h2>
+              <span className="eyebrow">Nuestro propósito</span>
+              <h2>Construyendo un futuro de infraestructura sostenible</h2>
               <p
                 style={{ marginTop: 20, color: "var(--slate-500)", fontSize: 17, lineHeight: 1.8 }}
-                data-es
               >
                 Brindamos soluciones integradas en proyectos de ingeniería civil,
                 telecomunicaciones, data centers y remodelaciones & construcción comercial. Diseñamos
                 y construimos data centers y salas técnicas llave en mano, diferenciándonos por el
                 cumplimiento en la ejecución, la calidad y el profesionalismo.
               </p>
-              <p
-                style={{ marginTop: 20, color: "var(--slate-500)", fontSize: 17, lineHeight: 1.8 }}
-                data-en
-              >
-                We provide integrated solutions across civil engineering, telecommunications, data
-                centers and remodeling & commercial construction. We design and build turnkey data
-                centers and server rooms, standing out for execution discipline, quality, and
-                professionalism.
-              </p>
               <div className="purpose-tags">
-                <span className="tag" data-es>Ingeniería Civil</span>
-                <span className="tag" data-en>Civil Engineering</span>
-                <span className="tag" data-es>Telecomunicaciones</span>
-                <span className="tag" data-en>Telecommunications</span>
-                <span className="tag" data-es>Data Centers</span>
-                <span className="tag" data-en>Data Centers</span>
-                <span className="tag" data-es>Remodelaciones</span>
-                <span className="tag" data-en>Remodeling</span>
+                <span className="tag">Ingeniería Civil</span>
+                <span className="tag">Telecomunicaciones</span>
+                <span className="tag">Data Centers</span>
+                <span className="tag">Remodelaciones</span>
               </div>
               <Link href="/nosotros" className="btn btn-primary">
-                <span data-es>Conocer Más</span>
-                <span data-en>Learn More</span>
+                <span>Conocer Más</span>
               </Link>
             </div>
             <div className="purpose-image-wrap">
               <div className="purpose-image">
                 <Image
-                  src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1200&auto=format&fit=crop"
-                  alt="Ingenieros revisando planos en sitio de construcción"
+                  src="/images/construccion-de-apartamentos/10.jpg"
+                  alt="Construcción de edificio de apartamentos por Servicios Rojas"
                   fill
                   sizes="(max-width: 960px) 100vw, 600px"
                   style={{ objectFit: "cover" }}
@@ -175,53 +117,44 @@ export default function HomePage() {
                 <div className="num">
                   <Counter to={29} />+
                 </div>
-                <div className="label" data-es>Años de Experiencia</div>
-                <div className="label" data-en>Years of Experience</div>
+                <div className="label">Años de Experiencia</div>
               </div>
             </div>
           </div>
         </div>
       </Reveal>
 
-      <Reveal className="industries">
+      <Reveal className="soluciones">
         <div className="container">
-          <div className="section-head">
-            <span className="eyebrow" data-es>Nuestros servicios</span>
-            <span className="eyebrow" data-en>Our services</span>
-            <h2 data-es>Sectores donde entregamos resultados</h2>
-            <h2 data-en>Sectors where we deliver results</h2>
-            <p data-es>
-              Cuatro áreas de negocio integradas — ingeniería civil, telecomunicaciones, data
-              centers y remodelaciones & construcción comercial — coordinadas para entregar
-              proyectos llave en mano de cualquier escala.
-            </p>
-            <p data-en>
-              Four integrated business areas — civil engineering, telecommunications, data centers
-              and remodeling & commercial construction — coordinated to deliver turnkey projects at
-              any scale.
-            </p>
-          </div>
-          <div className="industries-grid">
-            {INDUSTRIES.map((it) => (
-              <Link key={it.num} href={it.href} className="industry-card">
-                <Image
-                  src={it.img}
-                  alt={it.title.es}
-                  fill
-                  sizes="(max-width: 760px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                  style={{ objectFit: "cover" }}
-                />
-                <div className="industry-card-body">
-                  <div className="num">{it.num}</div>
-                  <h3 data-es>{it.title.es}</h3>
-                  <h3 data-en>{it.title.en}</h3>
-                  <p data-es>{it.desc.es}</p>
-                  <p data-en>{it.desc.en}</p>
-                  <span className="arrow" data-es>VER MÁS →</span>
-                  <span className="arrow" data-en>LEARN MORE →</span>
-                </div>
+          <div className="soluciones-grid">
+            <div className="soluciones-content">
+              <h2 className="soluciones-title">
+                <span>Soluciones<br/>integrales</span>
+              </h2>
+              <p className="soluciones-sub">
+                <span>Abarcamos cada etapa de tu proyecto con un enfoque integral y especializado.</span>
+              </p>
+              <Link href="/servicios" className="btn-cta-primary">
+                <span>Conoce más</span>
               </Link>
-            ))}
+            </div>
+
+            <div className="soluciones-cards">
+              {PHASES.map((p) => (
+                <div key={p.key} className="soluciones-card">
+                  <Image
+                    src={p.img}
+                    alt={p.title.es}
+                    fill
+                    sizes="(max-width:760px) 80vw, (max-width:1200px) 33vw, 20vw"
+                    style={{ objectFit: "cover" }}
+                  />
+                  <span className="soluciones-card-label">
+                    <span>{p.title.es}</span>
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </Reveal>
@@ -229,10 +162,11 @@ export default function HomePage() {
       <Reveal className="stats-banner">
         <div className="container">
           <div className="stats-banner-grid">
-            <StatBanner to={29} es="Años" en="Years" />
-            <StatBanner to={500} es="Proyectos" en="Projects" />
-            <StatBanner to={200} es="Sitios Telecom" en="Telecom Sites" />
-            <StatBanner to={15} es="Clientes Recurrentes" en="Repeat Clients" />
+            <StatBanner to={200} prefix="+" es="Sitios telecom" />
+            <StatBanner to={10000} prefix="+" unit="km" es="Fibra óptica" />
+            <StatBanner to={5} prefix="+" es="Data centers" />
+            <StatBanner to={15} suffix="+" es="Años de experiencia" />
+            <StatBanner textEs="Cobertura nacional" es="Panamá" />
           </div>
         </div>
       </Reveal>
@@ -240,40 +174,14 @@ export default function HomePage() {
       <Reveal className="projects-bg">
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow" data-es>Proyectos destacados</span>
-            <span className="eyebrow" data-en>Featured projects</span>
-            <h2 data-es>Proyectos de data centers, telecom e infraestructura crítica</h2>
-            <h2 data-en>Data center, telecom and critical infrastructure projects</h2>
+            <span className="eyebrow">Proyectos destacados</span>
+            <h2>Proyectos de data centers, telecom e infraestructura crítica</h2>
           </div>
           <HomeFeatured />
           <div style={{ textAlign: "center", marginTop: 50 }}>
             <Link href="/proyectos" className="btn btn-dark">
-              <span data-es>Ver Todos los Proyectos</span>
-              <span data-en>View All Projects</span>
+              <span>Ver Todos los Proyectos</span>
             </Link>
-          </div>
-        </div>
-      </Reveal>
-
-      <Reveal as="section" className="cta-strip">
-        <div className="container">
-          <div className="cta-strip-grid">
-            <div>
-              <h2 data-es>
-                De la materia prima al producto final, te ayudamos a construir el mundo con nosotros
-              </h2>
-              <h2 data-en>
-                From raw materials to finished products, we help you build the world with us
-              </h2>
-              <p data-es>Casi tres décadas entregando proyectos llave en mano respaldan nuestra capacidad técnica y operacional.</p>
-              <p data-en>Almost three decades of turnkey delivery back our technical and operational capacity.</p>
-            </div>
-            <div className="cta-strip-actions">
-              <Link href="/contacto" className="btn btn-primary">
-                <span data-es>Cotizar Proyecto</span>
-                <span data-en>Quote Project</span>
-              </Link>
-            </div>
           </div>
         </div>
       </Reveal>
@@ -281,25 +189,17 @@ export default function HomePage() {
       <Reveal as="section" className="cta">
         <div className="cta-glow"></div>
         <div className="container">
-          <span className="eyebrow" style={{ color: "var(--orange)" }} data-es>
+          <span className="eyebrow" style={{ color: "var(--orange)" }}>
             Hablemos de tu proyecto
           </span>
-          <span className="eyebrow" style={{ color: "var(--orange)" }} data-en>
-            Let&apos;s talk about your project
-          </span>
-          <h2 data-es>¿Listo para construir<br/>infraestructura de clase mundial?</h2>
-          <h2 data-en>Ready to build<br/>world-class infrastructure?</h2>
-          <p data-es>
+          <h2>¿Listo para construir<br/>infraestructura de clase mundial?</h2>
+          <p>
             Solicita una cotización sin compromiso. Nuestro equipo de ingeniería responderá en
             menos de 24 horas.
           </p>
-          <p data-en>
-            Request a no-obligation quote. Our engineering team will respond within 24 hours.
-          </p>
           <div className="cta-actions">
             <Link href="/contacto" className="btn btn-primary">
-              <span data-es>Solicitar Cotización</span>
-              <span data-en>Request Quote</span>
+              <span>Solicitar Cotización</span>
             </Link>
             <a href="tel:+5072298840" className="btn btn-outline">+507 229-8840</a>
           </div>
@@ -311,70 +211,59 @@ export default function HomePage() {
 
 function StatBanner({
   to,
-  suffix = "+",
+  prefix,
+  suffix,
+  unit,
+  textEs,
   es,
-  en,
 }: {
-  to: number;
+  to?: number;
+  prefix?: string;
   suffix?: string;
+  unit?: string;
+  textEs?: string;
   es: string;
-  en: string;
 }) {
+  const isText = Boolean(textEs);
   return (
     <div>
-      <div className="num">
-        <Counter to={to} />
-        <small>{suffix}</small>
+      <div className={isText ? "num num--text" : "num"}>
+        {isText ? (
+          <span>{textEs}</span>
+        ) : (
+          <>
+            {prefix && <span className="num-prefix">{prefix}</span>}
+            <Counter to={to ?? 0} />
+            {unit && <span className="num-unit">{unit}</span>}
+            {suffix && <span className="num-suffix">{suffix}</span>}
+          </>
+        )}
       </div>
-      <div className="label" data-es>{es}</div>
-      <div className="label" data-en>{en}</div>
+      <div className="label">{es}</div>
     </div>
   );
 }
 
-const INDUSTRIES = [
+const PHASES = [
   {
-    num: "01",
-    href: "/servicios#data",
-    img: "https://images.unsplash.com/photo-1597733336794-12d05021d510?q=80&w=1600&auto=format&fit=crop",
-    title: { es: "Data Centers", en: "Data Centers" },
-    desc: {
-      es: "Salas técnicas, pisos elevados, UPS, climatización y eléctrico crítico.",
-      en: "Server rooms, raised floors, UPS, HVAC and critical electrical.",
-    },
+    key: "design",
+    img: "/images/construccion-de-apartamentos/13.jpg",
+    title: { es: "Diseño y planeación", en: "Design & planning" },
   },
   {
-    num: "02",
-    href: "/servicios#telecom",
-    img: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=1600&auto=format&fit=crop",
-    title: { es: "Telecomunicaciones", en: "Telecommunications" },
-    desc: {
-      es: "Torres, antenas, enlaces, mantenimiento y BTS llave en mano.",
-      en: "Towers, antennas, links, maintenance and turnkey BTS.",
-    },
+    key: "build",
+    img: "/images/estructura-metalica/5.jpg",
+    title: { es: "Construcción", en: "Construction" },
   },
   {
-    num: "03",
-    href: "/servicios#civil",
-    img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600&auto=format&fit=crop",
-    title: { es: "Ingeniería Civil", en: "Civil Engineering" },
-    desc: {
-      es: "Obras industriales, fundaciones, naves, pavimentación y edificios.",
-      en: "Industrial works, foundations, warehouses, paving and buildings.",
-    },
+    key: "implementation",
+    img: "/images/datacenter-fusion/60.jpg",
+    title: { es: "Implementación", en: "Implementation" },
   },
   {
-    num: "04",
-    href: "/servicios#remodelacion",
-    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop",
-    title: {
-      es: "Remodelaciones y Construcción Comercial",
-      en: "Remodeling & Commercial Construction",
-    },
-    desc: {
-      es: "Locales retail, restaurantes, oficinas corporativas y centros de monitoreo llave en mano.",
-      en: "Retail stores, restaurants, corporate offices and monitoring centers turnkey.",
-    },
+    key: "operations",
+    img: "/images/76-sitios-tigo/42.jpg",
+    title: { es: "Operación y mantenimiento", en: "Operations & maintenance" },
   },
 ];
 

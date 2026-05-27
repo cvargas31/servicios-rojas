@@ -17,38 +17,31 @@ export default function ContactForm() {
 
   return (
     <div className="contact-form">
-      <h3 data-es>Solicita una cotización</h3>
-      <h3 data-en>Request a quote</h3>
-      <p data-es>Completa el formulario y nuestro equipo te contactará para coordinar.</p>
-      <p data-en>Fill out the form and our team will contact you to coordinate.</p>
+      <h3>Solicita una cotización</h3>
+      <p>Completa el formulario y nuestro equipo te contactará para coordinar.</p>
       <form onSubmit={handleSubmit}>
         <div className="form-row">
           <div className="form-group">
-            <label data-es>Nombre Completo</label>
-            <label data-en>Full Name</label>
+            <label>Nombre Completo</label>
             <input type="text" required />
           </div>
           <div className="form-group">
-            <label data-es>Empresa</label>
-            <label data-en>Company</label>
+            <label>Empresa</label>
             <input type="text" required />
           </div>
         </div>
         <div className="form-row">
           <div className="form-group">
-            <label data-es>Correo</label>
-            <label data-en>Email</label>
+            <label>Correo</label>
             <input type="email" required />
           </div>
           <div className="form-group">
-            <label data-es>Teléfono</label>
-            <label data-en>Phone</label>
+            <label>Teléfono</label>
             <input type="tel" required />
           </div>
         </div>
         <div className="form-group">
-          <label data-es>Tipo de Proyecto</label>
-          <label data-en>Project Type</label>
+          <label>Tipo de Proyecto</label>
           <select required defaultValue="">
             <option value="" disabled>— Selecciona —</option>
             <option>Telecomunicaciones</option>
@@ -58,8 +51,7 @@ export default function ContactForm() {
           </select>
         </div>
         <div className="form-group">
-          <label data-es>Mensaje / Detalles</label>
-          <label data-en>Message / Details</label>
+          <label>Mensaje / Detalles</label>
           <textarea rows={5} required />
         </div>
         <button
@@ -71,8 +63,7 @@ export default function ContactForm() {
             "✓ Mensaje Enviado"
           ) : (
             <>
-              <span data-es>Enviar Solicitud →</span>
-              <span data-en>Submit Request →</span>
+              <span>Enviar Solicitud →</span>
             </>
           )}
         </button>

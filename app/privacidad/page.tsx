@@ -13,24 +13,18 @@ export default function PrivacidadPage() {
     <>
       <section className="page-hero">
         <div className="container">
-          <span className="eyebrow" data-es>Política</span>
-          <span className="eyebrow" data-en>Policy</span>
-          <h1 data-es>Política de Privacidad</h1>
-          <h1 data-en>Privacy Policy</h1>
-          <p data-es>
+          <span className="eyebrow">Política</span>
+          <h1>Política de Privacidad</h1>
+          <p>
             Servicios Rojas, S.A. respeta tu privacidad. Esta política describe cómo recolectamos,
             usamos y protegemos tu información personal en este sitio web.
-          </p>
-          <p data-en>
-            Servicios Rojas, S.A. respects your privacy. This policy describes how we collect, use
-            and protect your personal information on this website.
           </p>
         </div>
       </section>
 
       <section className="legal-section">
         <div className="container" style={{ maxWidth: 880 }}>
-          <article className="legal-body" data-es>
+          <article className="legal-body">
             <h2>1. Responsable del tratamiento</h2>
             <p>
               Servicios Rojas, S.A., con domicilio en Calle E, Casa L 17, Bethania, Panamá, es la
@@ -96,70 +90,6 @@ export default function PrivacidadPage() {
 
             <p>
               <em>Última actualización: {new Date().getFullYear()}.</em>
-            </p>
-          </article>
-
-          <article className="legal-body" data-en>
-            <h2>1. Data controller</h2>
-            <p>
-              Servicios Rojas, S.A., located at Calle E, Casa L 17, Bethania, Panamá, is the entity
-              responsible for personal data collected through this website. For any inquiries write
-              to <a href="mailto:proyectos@servicios-rojas.com">proyectos@servicios-rojas.com</a>.
-            </p>
-
-            <h2>2. Data we collect</h2>
-            <ul>
-              <li>
-                <strong>Contact form data:</strong> name, company, email, phone, project type and
-                message.
-              </li>
-              <li>
-                <strong>Technical data:</strong> IP address, browser type, pages visited and time
-                on site, via cookies and analytics tools.
-              </li>
-            </ul>
-
-            <h2>3. Purposes</h2>
-            <ul>
-              <li>Respond to quote requests and commercial inquiries.</li>
-              <li>Improve the site experience and measure performance.</li>
-              <li>Fulfill legal and commercial obligations related to our services.</li>
-            </ul>
-
-            <h2>4. Cookies and measurement</h2>
-            <p>
-              We use first- and third-party cookies (Google Analytics, Google Ads and Google Tag
-              Manager) to analyze traffic and measure advertising performance. You can disable
-              cookies from your browser settings.
-            </p>
-
-            <h2>5. Data retention</h2>
-            <p>
-              Form data is kept for the time needed to handle your request and, afterwards, for
-              applicable legal retention periods.
-            </p>
-
-            <h2>6. Sharing with third parties</h2>
-            <p>
-              We do not sell or transfer your personal data. We share information only with
-              technology providers under confidentiality agreements (hosting, analytics, email).
-            </p>
-
-            <h2>7. Your rights</h2>
-            <p>
-              You may request access, rectification, opposition or deletion of your data by
-              writing to{" "}
-              <a href="mailto:proyectos@servicios-rojas.com">proyectos@servicios-rojas.com</a>.
-            </p>
-
-            <h2>8. Changes to this policy</h2>
-            <p>
-              We may update this policy periodically. The current version will always be available
-              on this page.
-            </p>
-
-            <p>
-              <em>Last updated: {new Date().getFullYear()}.</em>
             </p>
           </article>
         </div>

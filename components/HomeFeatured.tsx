@@ -8,33 +8,24 @@ import { PROJECTS } from "./projects-data";
 type FeaturedEntry = {
   slug: string;
   tag: string;
-  desc: { es: string; en: string };
+  desc: string;
 };
 
 const FEATURED: FeaturedEntry[] = [
   {
     slug: "datacenter-fusion-claro",
     tag: "DATA CENTER",
-    desc: {
-      es: "Adecuación civil e instalación del Datacenter Fusion Module 2000 para Claro Panamá.",
-      en: "Civil retrofit and Fusion Module 2000 datacenter install for Claro Panamá.",
-    },
+    desc: "Adecuación civil e instalación del Datacenter Fusion Module 2000 para Claro Panamá.",
   },
   {
     slug: "estructura-metalica-villa-zaita",
     tag: "CIVIL",
-    desc: {
-      es: "Instalación de estructura metálica en la estación del Metro de Villa Zaita para Grupo ITM.",
-      en: "Steel structure installation at the Villa Zaita Metro station for Grupo ITM.",
-    },
+    desc: "Instalación de estructura metálica en la estación del Metro de Villa Zaita para Grupo ITM.",
   },
   {
     slug: "76-sitios-tigo",
     tag: "TELECOM",
-    desc: {
-      es: "Construcción llave en mano de 76 sitios para la red Tigo de Millicom a nivel nacional.",
-      en: "Turnkey construction of 76 nationwide sites for the Millicom Tigo network.",
-    },
+    desc: "Construcción llave en mano de 76 sitios para la red Tigo de Millicom a nivel nacional.",
   },
 ];
 
@@ -104,10 +95,8 @@ export default function HomeFeatured() {
                 )}
               </div>
               <div className="project-body">
-                <h3 data-es>{source.title.es}</h3>
-                <h3 data-en>{source.title.en}</h3>
-                <p data-es>{it.desc.es}</p>
-                <p data-en>{it.desc.en}</p>
+                <h3>{source.title.es}</h3>
+                <p>{it.desc}</p>
                 <div className="project-meta">
                   <span>📍 {source.location}</span>
                   <strong>{source.year}</strong>

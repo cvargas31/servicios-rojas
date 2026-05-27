@@ -49,7 +49,7 @@ const SERVICES: Svc[] = [
       { es: "Centros de monitoreo", en: "Monitoring centers" },
       { es: "Impermeabilización de muros y techos", en: "Wall & roof waterproofing" },
     ],
-    img: "https://images.unsplash.com/photo-1591808216268-ce0b82787efe?q=80&w=1600&auto=format&fit=crop",
+    img: "/images/datacenter-fusion/60.jpg",
     imgLabel: { es: "DATA CENTER", en: "DATA CENTER" },
   },
   {
@@ -145,24 +145,16 @@ export default function ServiciosPage() {
 
           <div className="hero-content">
             <div className="hero-content-inner">
-              <span className="eyebrow" data-es>Lo que hacemos</span>
-              <span className="eyebrow" data-en>What we do</span>
-              <h1 data-es>Servicios integrales de ingeniería e infraestructura</h1>
-              <h1 data-en>Integrated engineering and infrastructure services</h1>
-              <p className="hero-sub" data-es>
+              <span className="eyebrow">Lo que hacemos</span>
+              <h1>Servicios integrales de ingeniería e infraestructura</h1>
+              <p className="hero-sub">
                 Cuatro áreas de negocio integradas — data centers, telecomunicaciones, ingeniería
                 civil y remodelaciones & construcción comercial — coordinadas para entregar
                 proyectos llave en mano de cualquier escala.
               </p>
-              <p className="hero-sub" data-en>
-                Four integrated business areas — data centers, telecommunications, civil
-                engineering and remodeling & commercial construction — coordinated to deliver
-                turnkey projects at any scale.
-              </p>
               <div className="hero-actions">
                 <Link href="/contacto" className="btn btn-pill">
-                  <span data-es>Cotizar Proyecto</span>
-                  <span data-en>Quote Project</span>
+                  <span>Cotizar Proyecto</span>
                 </Link>
               </div>
             </div>
@@ -176,20 +168,25 @@ export default function ServiciosPage() {
             <div className="svc-grid">
               {s.reverse && <SvcImage svc={s} />}
               <div>
-                <span className="eyebrow" data-es>{s.eyebrow.es}</span>
-                <span className="eyebrow" data-en>{s.eyebrow.en}</span>
-                <h2 data-es>{s.heading.es}</h2>
-                <h2 data-en>{s.heading.en}</h2>
-                <p style={{ marginTop: 20, fontSize: 17 }} data-es>{s.intro.es}</p>
-                <p style={{ marginTop: 20, fontSize: 17 }} data-en>{s.intro.en}</p>
+                <span className="eyebrow">{s.eyebrow.es}</span>
+                <h2>{s.heading.es}</h2>
+                <p style={{ marginTop: 20, fontSize: 17 }}>{s.intro.es}</p>
                 <ul className="svc-list">
                   {s.items.map((it, i) => (
                     <li key={i}>
-                      <span data-es>{it.es}</span>
-                      <span data-en>{it.en}</span>
+                      <span>{it.es}</span>
                     </li>
                   ))}
                 </ul>
+                {s.id === "data" && (
+                  <Link
+                    href="/servicios/data-centers"
+                    className="hero-link"
+                    style={{ marginTop: 28, display: "inline-block" }}
+                  >
+                    <span>Ver más sobre data centers →</span>
+                  </Link>
+                )}
               </div>
               {!s.reverse && <SvcImage svc={s} />}
             </div>
@@ -200,14 +197,11 @@ export default function ServiciosPage() {
       <Reveal as="section" className="cta">
         <div className="cta-glow"></div>
         <div className="container">
-          <h2 data-es>¿Necesitas un servicio específico?</h2>
-          <h2 data-en>Need a specific service?</h2>
-          <p data-es>Conversemos sobre el alcance, plazos y requerimientos técnicos.</p>
-          <p data-en>Let&apos;s discuss scope, timeline and technical requirements.</p>
+          <h2>¿Necesitas un servicio específico?</h2>
+          <p>Conversemos sobre el alcance, plazos y requerimientos técnicos.</p>
           <div className="cta-actions">
             <Link href="/contacto" className="btn btn-primary">
-              <span data-es>Solicitar Cotización</span>
-              <span data-en>Request Quote</span>
+              <span>Solicitar Cotización</span>
             </Link>
           </div>
         </div>
@@ -220,8 +214,7 @@ function SvcImage({ svc }: { svc: Svc }) {
   return (
     <div className="svc-image-wrap">
       <div className="svc-image">
-        <div className="label" data-es>{svc.imgLabel.es}</div>
-        <div className="label" data-en>{svc.imgLabel.en}</div>
+        <div className="label">{svc.imgLabel.es}</div>
         <Image
           src={svc.img}
           alt={svc.heading.es}

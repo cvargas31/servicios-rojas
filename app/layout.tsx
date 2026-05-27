@@ -4,7 +4,6 @@ import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import LangProvider from "@/components/LangProvider";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const inter = Inter({
@@ -54,12 +53,11 @@ export const metadata: Metadata = {
   formatDetection: { email: false, address: false, telephone: false },
   alternates: {
     canonical: "/",
-    languages: { "es-PA": "/", "en-US": "/" },
+    languages: { "es-PA": "/" },
   },
   openGraph: {
     type: "website",
     locale: "es_PA",
-    alternateLocale: ["en_US"],
     url: SITE_URL,
     siteName: "Servicios Rojas, S.A.",
     title: "Servicios Rojas, S.A. | Ingeniería Civil y Telecomunicaciones en Panamá",
@@ -189,12 +187,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             />
           </noscript>
         )}
-        <LangProvider>
-          <Navbar />
-          <main id="main">{children}</main>
-          <Footer />
-          <WhatsAppFloat />
-        </LangProvider>
+        <Navbar />
+        <main id="main">{children}</main>
+        <Footer />
+        <WhatsAppFloat />
 
         {GTM_ID && (
           <Script id="gtm" strategy="afterInteractive">
