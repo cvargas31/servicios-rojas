@@ -49,7 +49,7 @@ const SERVICES: Svc[] = [
       { es: "Centros de monitoreo", en: "Monitoring centers" },
       { es: "Impermeabilización de muros y techos", en: "Wall & roof waterproofing" },
     ],
-    img: "/images/datacenter-fusion/60.jpg",
+    img: "/images/data-center.webp",
     imgLabel: { es: "DATA CENTER", en: "DATA CENTER" },
   },
   {
@@ -226,3 +226,4 @@ function SvcImage({ svc }: { svc: Svc }) {
     </div>
   );
 }
+

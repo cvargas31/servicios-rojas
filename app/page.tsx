@@ -105,10 +105,11 @@ export default function HomePage() {
             <div className="purpose-image-wrap">
               <div className="purpose-image">
                 <Image
-                  src="/images/construccion-de-apartamentos/10.jpg"
-                  alt="Construcción de edificio de apartamentos por Servicios Rojas"
+                  src="/images/construction.jpg"
+                  alt="Proyecto de construcción por Servicios Rojas"
                   fill
-                  sizes="(max-width: 960px) 100vw, 600px"
+                  sizes="(max-width: 1024px) 100vw, (max-width: 1600px) 720px, (max-width: 2560px) 950px, 1200px"
+                  quality={90}
                   style={{ objectFit: "cover" }}
                   priority
                 />

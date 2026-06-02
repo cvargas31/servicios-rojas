@@ -54,7 +54,7 @@ export default function NosotrosPage() {
         <div className="hero-split">
           <div className="hero-photo">
             <Image
-              src="/images/nosotros-img1.jpg"
+              src="/images/worker-2.webp"
               alt="Servicios Rojas — Obra civil en Panamá"
               fill
               sizes="(max-width: 1024px) 100vw, 55vw"
