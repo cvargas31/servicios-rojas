@@ -21,7 +21,10 @@ const montserrat = Montserrat({
 });
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.servicios-rojas.com";
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "https://www.servicios-rojas.com");
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -65,10 +68,10 @@ export const metadata: Metadata = {
       "29 años entregando proyectos llave en mano de ingeniería civil, telecom y data centers en Panamá.",
     images: [
       {
-        url: "/images/logotipo-servicios-rojas.png",
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Servicios Rojas, S.A.",
+        alt: "Servicios Rojas, S.A. — Ingeniería Civil, Telecomunicaciones y Data Centers en Panamá",
       },
     ],
   },
@@ -77,7 +80,7 @@ export const metadata: Metadata = {
     title: "Servicios Rojas, S.A.",
     description:
       "Ingeniería civil, telecom y data centers en Panamá. Proyectos llave en mano desde 1997.",
-    images: ["/images/logotipo-servicios-rojas.png"],
+    images: ["/images/og-image.jpg"],
   },
   robots: {
     index: true,
