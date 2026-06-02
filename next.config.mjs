@@ -13,6 +13,14 @@ const nextConfig = {
       { protocol: "https", hostname: "images.pexels.com" },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/Curriculum-2026",
+        destination: "/Curriculum-2026.pdf",
+      },
+    ];
+  },
   async headers() {
     return [
       {
