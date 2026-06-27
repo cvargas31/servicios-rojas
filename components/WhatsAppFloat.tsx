@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 const WHATSAPP_NUMBER = "50766888362";
@@ -9,6 +11,14 @@ export default function WhatsAppFloat() {
     WHATSAPP_MESSAGE,
   )}`;
 
+  const handleWhatsAppClick = () => {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "conversion", {
+        send_to: "AW-18269078957/J4NICJLO3sYcEK2LsIdE",
+      });
+    }
+  };
+
   return (
     <Link
       href={href}
@@ -16,6 +26,7 @@ export default function WhatsAppFloat() {
       rel="noopener noreferrer"
       className="whatsapp-float"
       aria-label="Escríbenos por WhatsApp"
+      onClick={handleWhatsAppClick}
     >
       <svg viewBox="0 0 32 32" aria-hidden="true">
         <path
